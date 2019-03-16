@@ -135,7 +135,7 @@ namespace QuickSorter
         [Test]
         public static void Test5()
         {
-            var array = new int[150000000];
+            var array = new int[150000001];
             Program.GenerateArray(array);
             Program.QuickSort(array);
             bool flag = true;
