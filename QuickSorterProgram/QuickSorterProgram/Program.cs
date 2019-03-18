@@ -53,41 +53,40 @@ namespace QuickSorter
     class Test
     {
         [Test]
-        public static void Test1()
+        public static void Test3Elements()
         {
             var array = new int[3];
             Program.GenerateArray(array);
             Program.QuickSort(array);
             bool flag = true;
-            if (!(array is null))
-                for (int i = 0; i < array.Length - 1; i++)
-                    if (array[i + 1] < array[i])
-                    {
-                        flag = false;
-                        break;
-                    }
+            for (int i = 0; i < array.Length - 1; i++)
+                if (array[i + 1] < array[i])
+                {
+                    flag = false;
+                    break;
+                }
             Assert.IsTrue(flag);
         }
 
         [Test]
-        public static void Test2()
+        public static void Test100Elements()
         {
             var array = new int[100];
-            Program.GenerateArray(array);
+            for (int i = 0; i < array.Length; i++)
+                array[i] = 42;
             Program.QuickSort(array);
             bool flag = true;
-            if (!(array is null))
-                for (int i = 0; i < array.Length - 1; i++)
-                    if (array[i + 1] < array[i])
-                    {
-                        flag = false;
-                        break;
-                    }
+            for (int i = 0; i < array.Length - 1; i++)
+                if (array[i + 1] < array[i])
+                {
+                    flag = false;
+                    break;
+                }
             Assert.IsTrue(flag);
         }
 
         [Test]
-        public static void Test3()
+        public static void Test1000Elements()
         {
             var array = new int[1000];
             Program.GenerateArray(array);
@@ -116,36 +115,34 @@ namespace QuickSorter
         }
 
         [Test]
-        public static void Test4()
+        public static void TestEmptyArray()
         {
             var array = new int[0];
             Program.GenerateArray(array);
             Program.QuickSort(array);
             bool flag = true;
-            if (!(array is null))
-                for (int i = 0; i < array.Length - 1; i++)
-                    if (array[i + 1] < array[i])
-                    {
-                        flag = false;
-                        break;
-                    }
+            for (int i = 0; i < array.Length - 1; i++)
+                if (array[i + 1] < array[i])
+                {
+                    flag = false;
+                    break;
+                }
             Assert.IsTrue(flag);
         }
 
         [Test]
-        public static void Test5()
+        public static void Test150000000Elements()
         {
             var array = new int[150000000];
             Program.GenerateArray(array);
             Program.QuickSort(array);
             bool flag = true;
-            if (!(array is null))
-                for (int i = 0; i < array.Length - 1; i++)
-                    if (array[i + 1] < array[i])
-                    {
-                        flag = false;
-                        break;
-                    }
+            for (int i = 0; i < array.Length - 1; i++)
+                if (array[i + 1] < array[i])
+                {
+                    flag = false;
+                    break;
+                }
             Assert.IsTrue(flag);
         }
     }
